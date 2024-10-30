@@ -16,6 +16,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayJobs() {
         const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        console.log("Retrieved jobs:", jobs); // Debugging line
+
+        if (jobs.length > 0) {
+            featuredJobsSection.style.display = "block";
+            jobList.innerHTML = ""; // Clear previous listings
+
+            jobs.forEach(job => {
+                const jobCard = document.createElement("div");
+                jobCard.classList.add("job-card");
+                jobCard.innerHTML = `
+                    <h4>${job.title}</h4>
+                    <p>Description: ${job.description}</p>
+                    <p>Location: ${job.location}</p>
+                    <p>Salary: ${job.salary}</p>
+                    <p>Contact Phone: ${job.phone}</p>
+                    <p>Contact Email: ${job.email}</p>
+                `;
+                jobList.appendChild(jobCard);
+            });
+        } else {
+            featuredJobsSection.style.display = "none"; // Hide if no jobs exist
+            console.log("No jobs to display."); // Debugging line
+        }
+    }
+
+    displayJobs();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const jobList = document.getElementById("jobList");
+    const featuredJobsSection = document.getElementById("featuredJobs");
+
+    function displayJobs() {
+        const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
 
         if (jobs.length > 0) {
             featuredJobsSection.style.display = "block";
