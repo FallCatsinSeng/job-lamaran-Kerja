@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Post a Job</h1>
+        <nav>
+            <a href="index.html">Find Jobs</a>
+        </nav>
+    </header>
+
+    <section class="post-job-form" id="postJobSection">
+        <form id="jobForm">
+            <label for="title">Job Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Job Description</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="salary">Salary</label>
+            <input type="text" id="salary" name="salary" required>
+
+            <label for="phone">Contact Phone Number</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="email">Contact Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">Post Job</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
